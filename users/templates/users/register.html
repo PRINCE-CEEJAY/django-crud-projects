@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %} 
+<div>
+    <h1> WELCOME TO THE USER REGISTRATION PAGE</h1>
+    <p1>please enter your details in the form below</p1>
+    <form method="post" action="{% url 'users:register' %}">
+        {% csrf_token %}
+        {{ reg_form }}
+        <button type="submit">Register</button>
+    </form>
+</div>
+{% endblock %}

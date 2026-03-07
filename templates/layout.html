@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FULLSTACK CRUD PROFILE</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'users:auth_route' %}">Auth Page</a>
+        <a href="{% url 'profiles:profile' %}">MAIN CRUD PAGE</a>
+        <a href="{% url 'users:logout' %}">logout</a>
+    </nav>
+    {% block content %} {% endblock %}
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div>
+    <h1>WELCOME TO THE AUTHENTICATION PAGE, REGISTER OR LOGIN BELOW</h1>
+    <div class="flex justify-evenly items-center w-full bg-amber-800 text-white">
+        <a href="{% url 'users:register' %}">Register</a>
+        <a href="{% url 'users:login' %}">Login</a>
+    </div>
+</div>
+{% endblock %}
