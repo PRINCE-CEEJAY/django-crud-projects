@@ -4,8 +4,8 @@ from profiles.views import ProfilesListView, ProfilesCreateView, ProfilesUpdateV
 app_name = 'profiles'
 
 urlpatterns = [
-    path('add_profile/', ProfilesCreateView.as_view(), name='add_profile'),
     path('', ProfilesListView.as_view(), name='profile'),
+    path('add_profile/', ProfilesCreateView.as_view(), name='add_profile'),
     path('delete_profile/<int:pk>', ProfilesDeleteView.as_view(), name='delete_profile'),
     path('update_profile/<int:pk>', ProfilesUpdateView.as_view(), name='update_profile'),
 ]

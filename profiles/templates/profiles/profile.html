@@ -3,5 +3,22 @@
 {% block content %}
 <div>
     <h1>NOW THAT YOU ARE REGISTERED AND LOGGED IN, LET'S CRUD ... </h1>
+    <a href="{% url 'profiles:add_profile' %}">Create a Profile</a>
+    <br/>
+    <section class="profile-card">
+        {% for profile in profiles %}
+            <h1><span>ID: </span>{{ profile.id }}</h1>
+            <h1><span>NAME: </span>{{ profile.name }}</h1>
+            <h1><span>BIO: </span>{{ profile.bio }}</h1>
+            <h1><span>EMAIL: </span>{{ profile.email }}</h1>
+            <h1><span>JOB: </span>{{ profile.job }}</h1>
+            <h1><span>AGE: </span>{{ profile.age }}</h1>
+            <h1><span>DATE CREATED: </span>{{ profile.date_created }}</h1>
+    
+            <a href="{% url 'profiles:update_profile' profile.id %}">Update Profile</a>
+            <a href="{% url 'profiles:delete_profile' profile.id %}">Delete Profile</a>
+        {% endfor %}
+    </section>
+
 </div>
 {% endblock %}

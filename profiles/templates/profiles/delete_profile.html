@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div>
+    <h1>PROFILE DELETION PAGE</h1>
+    <form method="post">
+        {% csrf_token %}
+        <h1 style="text-align: center;">Are you sure you want to delete {{ profile.name }} ?</h1>
+        <button style="cursor: pointer; background: red;" type="submit">Yes</button>        
+    </form>
+    <a href="{% url 'profiles:profile' %}">Cancel</a>
+</div>
+{% endblock %}
