@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Tasks {% endblock %}
+
+{% block content%}
+<h1 class="text-center animate-pulse text-blue-900 text-xl">CREATE A TASK</h1>
+<form hx-post = "{% url 'tasks:add' %}" hx-swap ="beforeend" hx-target="#task-list" class="border rounded-lg p-2">
+    {% csrf_token %}
+    <div>
+        <label>Title: </label>
+        <input name="title" type="text" placeholder="Enter the title here"/>
+    </div>
+
+    <div>
+        <label>Description: </label>
+        <input name="description" type="text" placeholder="Describe the task details"/>
+    </div>
+    <button type="submit">Add Task</button>
+</form>
+
+<div class="rounded-xl bg-amber-800 mt-3 p-2">
+    <h1 class="text-center animate-bounce text-green-900 ">Task List</h1>
+    {% if tasks %}
+
+    <ul id="task-list" class="grid grid-cols-3">
+        {% for task in tasks %}   
+            {% include 'partials/task-item.html' %}       
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+{% endblock %}

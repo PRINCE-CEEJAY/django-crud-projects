@@ -1,0 +1,7 @@
+<div class="border-2 p-2 m-1 rounded-md flex flex-col items-center justify-center">
+    <li>Title: {{ task.title }}</li>
+    <li>Description: {{ task.description }}</li>
+    <li>Date Created: {{ task.date_created|date:"d M, Y" }}</li>
+    <li>Author: {{ request.user|upper }}</li>
+    <br/>
+</div>

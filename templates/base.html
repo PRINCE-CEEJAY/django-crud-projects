@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEEJAY INTERNATIONAL - {% block title %} {% endblock %}</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex flex-col items-center  bg-black text-white font-bold min-h-screen">
+    <nav class="w-full bg-amber-950 p-2 flex justify-evenly">     
+        <a href="{% url 'homepage' %}">Home</a> 
+    </nav>
+    <main class="h-fit p-2">
+        {% block content %} {% endblock %}
+    </main>
+    <footer class="w-full bg-amber-950 p-2 flex justify-evenly">ALL RIGHTS RESERVED @ CEEJAY INTERNATIONAL 2026</footer>
+</body>
+</html>
