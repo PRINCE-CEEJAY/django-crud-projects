@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h1 class="text-success text-xl">Product list</h1>        
+        {% include 'product/partials/add-product.html' %}        
+       {% include 'product/partials/search.html' %}
+       
+    <div>
+        {% include 'product/partials/product-list.html' %}
+    </div>
+
+{% endblock %}

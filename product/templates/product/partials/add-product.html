@@ -1,0 +1,8 @@
+<form method="post" action="{% url 'create_product' %}">
+{% csrf_token %}
+    {{ form }}
+    {% if form.errors %}
+        {{ form.errors }}
+    {% endif %}
+    <button class="btn btn-primary">Create Product</button>
+</form>
